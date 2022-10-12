@@ -5,6 +5,7 @@ exports.up = function (knex) {
     table.string("text").notNullable();
     table.string("status").notNullable().defaultTo("private");
     table.integer("category_id").notNullable();
+    table.timestamp("createdAt").defaultTo(knex.fn.now());
   });
 };
 

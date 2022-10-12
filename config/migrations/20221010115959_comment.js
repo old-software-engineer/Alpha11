@@ -4,6 +4,7 @@ exports.up = function (knex) {
     table.integer("creator_id").notNullable();
     table.string("text").notNullable();
     table.integer("article_id").notNullable();
+    table.timestamp("createdAt").defaultTo(knex.fn.now());
   });
 };
 
